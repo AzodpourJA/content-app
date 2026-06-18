@@ -432,6 +432,7 @@ async function generate() {
 
     const data = await response.json();
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'خطا در دریافت پاسخ';
+    console.log('Gemini response:', JSON.stringify(data));
 
     document.getElementById('result-text').textContent = text;
     document.getElementById('result-card').style.display = 'block';
